@@ -27,10 +27,13 @@ class LoginActivity : AppCompatActivity() {
         //setContentView(R.layout.activity_login)
         //val binding= DataBindingUtil.setContentView<ActivityLikaijieBinding>(this,R.layout.activity_likaijie)
         //val viewModel = ViewModelProviders.of(this).get(MvvmViewModel::class.java)
-        val  binding=DataBindingUtil.setContentView<ActivityLoginBinding>(this,R.layout.activity_login)
+        //        添加注释测试下
+        val binding =
+            DataBindingUtil.setContentView<ActivityLoginBinding>(this, R.layout.activity_login)
 
         val viewModel =
-            ViewModelProvider.AndroidViewModelFactory(application).create(LoginViewModel::class.java)
+            ViewModelProvider.AndroidViewModelFactory(application)
+                .create(LoginViewModel::class.java)
 
         binding.apply {
             vm = viewModel
