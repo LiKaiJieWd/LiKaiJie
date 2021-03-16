@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="content"
+            type="com.pha.likaijie.bean.OrdBean" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        card_view:cardBackgroundColor="@color/white"
+
+        >
+
+        <RelativeLayout
+            android:id="@+id/rl_content"
+            android:layout_width="match_parent"
+            android:layout_height="115dp"
+            android:layout_margin="10dp"
+
+            android:background="@drawable/png_box">
+
+
+            <RelativeLayout
+                android:id="@+id/rl_info_title"
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_box_top">
+
+                <TextView
+                    android:id="@+id/tv_boxNoLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:text="箱号："
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    tools:text="箱号：" />
+
+                <TextView
+                    android:id="@+id/tv_boxNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/tv_boxNoLabel"
+                    android:text="@{content.boxNo}"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    tools:text="JYS20191218008" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rl_info_title">
+
+                <TextView
+                    android:id="@+id/tv_fromLocDescLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center"
+                    android:text="发送科室："
+                    android:textColor="@color/gray_font"
+                    android:textSize="14sp"
+                    tools:text="发送科室：" />
+
+                <TextView
+                    android:id="@+id/tv_fromLocDesc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+
+                    android:layout_toRightOf="@id/tv_fromLocDescLabel"
+                    android:gravity="center"
+                    android:text="@{content.fromLocDesc}"
+                    android:textColor="@color/gray_font"
+                    android:textSize="14sp"
+                    tools:text="煎药室" />
+
+                <TextView
+                    android:id="@+id/tv_toLocDescLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_toLeftOf="@id/tv_toLocDesc"
+                    android:gravity="center"
+                    android:text="接收科室："
+                    android:textColor="@color/gray_font"
+                    android:textSize="14sp"
+                    tools:text="接收科室：" />
+
+                <TextView
+                    android:id="@+id/tv_toLocDesc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_alignParentRight="true"
+
+                    android:layout_marginRight="10dp"
+                    android:gravity="center"
+                    android:text="@{content.toLocDesc}"
+                    android:textColor="@color/gray_font"
+                    android:textSize="14sp"
+                    tools:text="内分泌科护理单元" />
+
+                <TextView
+                    android:id="@+id/tv_dateLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_below="@id/tv_toLocDesc"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center"
+                    android:text="建箱时间："
+                    android:textColor="@color/gray_font"
+                    android:textSize="14sp"
+                    tools:text="建箱时间：" />
+
+                <TextView
+                    android:id="@+id/tv_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_below="@id/tv_toLocDesc"
+
+                    android:layout_toRightOf="@id/tv_dateLabel"
+                    android:gravity="center"
+                    android:text="@{content.dateTime}"
+                    android:textColor="@color/gray_font"
+                    android:textSize="14sp"
+                    tools:text="2019-12-18 15:31:55" />
+
+                <TextView
+                    android:id="@+id/tv_createUserLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_below="@id/tv_toLocDesc"
+                    android:layout_toLeftOf="@id/tv_createUser"
+                    android:gravity="center"
+                    android:text="建箱人："
+                    android:textColor="@color/gray_font"
+                    android:textSize="14sp"
+                    tools:text="建箱人：" />
+
+                <TextView
+                    android:id="@+id/tv_createUser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_below="@id/tv_toLocDesc"
+                    android:layout_alignParentRight="true"
+
+                    android:layout_marginRight="10dp"
+                    android:gravity="center"
+                    android:text="@{content.createUser}"
+                    android:textColor="@color/gray_font"
+                    android:textSize="14sp"
+                    tools:text="李云龙" />
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="0.5dp"
+                    android:layout_below="@id/tv_date"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/split_line" />
+
+                <TextView
+                    android:id="@+id/tv_itmCountLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_below="@id/tv_date"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center"
+                    android:text="处方数："
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    tools:text="处方数：" />
+
+                <TextView
+                    android:id="@+id/tv_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_below="@id/tv_date"
+
+                    android:layout_toRightOf="@id/tv_itmCountLabel"
+                    android:gravity="center"
+                    android:text="@{content.count}"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    tools:text="1" />
+
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

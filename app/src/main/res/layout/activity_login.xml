@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.pha.likaijie.viewmodel.LoginViewModel" />
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/ic_lanuncher" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/op_label"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="25dp">
+
+            <ImageView
+                android:id="@+id/iv_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+
+                android:src="@drawable/ic_svg_login_user" />
+
+            <EditText
+
+                android:id="@+id/edt_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="21dp"
+                android:layout_toRightOf="@id/iv_username"
+                android:background="@null"
+                android:hint="请输入帐号"
+                android:text="@={vm.obUsername}" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/edt_username"
+                android:layout_marginTop="2dp"
+                android:background="@color/light_gray" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="25dp">
+
+            <ImageView
+                android:id="@+id/iv_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+
+                android:src="@drawable/ic_svg_login_password" />
+
+            <EditText
+                android:id="@+id/edt_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="21dp"
+                android:layout_toRightOf="@id/iv_password"
+                android:background="@null"
+                android:hint="请输入密码"
+                android:inputType="textPassword"
+                android:text="@={vm.obPassword}" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/edt_password"
+                android:layout_marginTop="2dp"
+                android:background="@color/light_gray" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="25dp">
+
+            <ImageView
+                android:id="@+id/iv_loc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+
+                android:src="@drawable/ic_svg_login_loc" />
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/sp_loc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_toRightOf="@id/iv_loc"
+                android:gravity="center"
+
+                android:spinnerMode="dialog"
+                android:textAlignment="center" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/sp_loc"
+                android:layout_marginTop="2dp"
+                android:background="@color/light_gray" />
+        </RelativeLayout>
+        <CheckBox
+            android:id="@+id/chk_loginInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="25dp"
+            android:button="@null"
+            android:drawableLeft="@drawable/select_checkbox"
+            android:drawablePadding="10dp"
+            android:paddingLeft="0dp"
+            android:text="记住登录信息"
+            android:textColor="#FF5D5D5D"
+            app:setChecked="@{vm.obChecked}" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_login"
+            style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+            android:layout_width="356dp"
+            android:layout_height="39dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="25dp"
+
+            android:background="@color/middle_blue"
+            android:clickable="@{vm.obUsername.length()>0&amp;&amp;vm.obPassword.length()>0}"
+            android:enabled="@{vm.obUsername.length()>0&amp;&amp;vm.obPassword.length()>0}"
+
+            android:text="登录"
+            android:textColor="@color/azure"
+
+            android:textSize="16sp"
+            app:cornerRadius="30dp" />
+
+
+    </LinearLayout>
+</layout>

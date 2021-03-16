@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <Button
+            android:id="@+id/btn_lifecycle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            tools:ignore="Suspicious0dp"
+            android:layout_weight="1"
+            android:text="Lifecycle"/>
+        <Button
+            android:id="@+id/btn_livedata"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            tools:ignore="Suspicious0dp"
+            android:layout_weight="1"
+            android:text="livedata"/>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        >
+        <Button
+            android:id="@+id/btn_mvvm"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            tools:ignore="Suspicious0dp"
+            android:layout_weight="1"
+            android:background="@color/brown"
+            android:text="mvvm"/>
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/aquamarine"
+            android:text="login"
+            tools:ignore="Suspicious0dp" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabIndicatorColor="@color/blue"
+            app:tabIndicatorHeight="2dp"
+
+            app:tabSelectedTextColor="@color/tab_selected"
+
+            app:tabTextColor="@color/tab_unselected" />
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            >
+
+            <RelativeLayout
+                android:id="@+id/rl_ord"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="0dp">
+
+                <TextView
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+
+                    android:layout_centerVertical="true"
+                    android:text="医嘱ID"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/edt_ord"
+                    android:layout_width="145dp"
+                    android:layout_height="35dp"
+
+                    android:layout_marginLeft="80dp"
+                    android:background="@drawable/bg_edit_view_white"
+                    android:gravity="center"
+
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/rl_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="执行日期"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/edt_start"
+                    android:layout_width="145dp"
+                    android:layout_height="35dp"
+
+                    android:layout_marginLeft="80dp"
+                    android:background="@drawable/bg_edit_view_white"
+                    android:gravity="center"
+                    android:text="2019年6月24日"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_batNo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rl_date"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="7.5dp"
+                android:background="@drawable/bg_edit_view_white"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_scanCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rl_batNo"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/bg_edit_view_white"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
+
+                <RelativeLayout
+                    android:id="@+id/rl_code"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true">
+
+                    <ImageView
+                        android:id="@+id/iv_code"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="15dp"
+                        android:src="@drawable/ic_svg_code" />
+
+                    <TextView
+                        android:id="@+id/tv_code"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dp"
+                        android:layout_toRightOf="@id/iv_code"
+                        android:text="登记号"
+                        android:textColor="#FFB4B4B4"
+                        android:textSize="15sp" />
+                </RelativeLayout>
+
+                <EditText
+                    android:id="@+id/edt_barCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toLeftOf="@id/iv_confirm"
+                    android:layout_toRightOf="@id/rl_code"
+                    android:background="@null" />
+
+                <ImageView
+                    android:id="@+id/iv_confirm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="5dp"
+
+                    android:src="@drawable/ic_svg_confirm" />
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+        <ExpandableListView
+            android:id="@+id/elv_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@null"
+            tools:listitem="@layout/item_box" />
+    </LinearLayout>
+</layout>
